@@ -35,7 +35,7 @@ Configure Claude (macOS) to use Atlassian mcp with credentials stored in your Ke
        read:jira-user
 4. using Terminal, generate a base64 encoded string for each of the 2 tokens. it will paste to the clipboard. Save these for next step. Replace `<email address>` with your Atlassian email address. Replace `<token>` with the token generated for Jira and Confluence The base64 encoded credentials will copied directly to your Clipboard.
 
-You can use `gen_base64.sh` in the repo. Edit the script with your email and token then run as `sh ./get_base64.sh`. Token is saved to your Clipboard.
+	You can use `gen_base64.sh` in the repo. Edit the script with your email and token then run as `sh ./get_base64.sh`. Token is saved to your Clipboard.
      
       `printf '%s' "<email address>:<token>" | base64 | tr -d '\n' | pbcopy`
       
