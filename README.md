@@ -34,10 +34,12 @@ Configure Claude (macOS) to use Atlassian mcp with credentials stored in your Ke
        read:jira-work
        read:jira-user
 4. using Terminal, generate a base64 encoded string for each of the 2 tokens. it will paste to the clipboard. Save these for next step. Replace `<email address>` with your Atlassian email address. Replace `<token>` with the token generated for Jira and Confluence The base64 encoded credentials will copied directly to your Clipboard.
+
+You can use `gen_base64.sh` in the repo. Edit the script with your email and token then run as `sh ./get_base64.sh`. Token is saved to your Clipboard.
      
       `printf '%s' "<email address>:<token>" | base64 | tr -d '\n' | pbcopy`
       
-5. create 2 Keychain entries for the 2 base64 encoded strings (from step 3)
+6. create 2 Keychain entries for the 2 base64 encoded strings (from step 3)
 
 	i. open Keychain
 	
@@ -53,9 +55,9 @@ Configure Claude (macOS) to use Atlassian mcp with credentials stored in your Ke
 	
 	vii. repeat with the jira token. Use jira_token for "Keychain Item Name"
 	
-6. create `~/Library/Application Support/Claude/scripts` and copy in `jira.sh` and `confluence.sh`
+7. create `~/Library/Application Support/Claude/scripts` and copy in `jira.sh` and `confluence.sh`
 
-7. add the following json to `~/Library/Application Support/Claude/claude_desktop_config.json`. Replace `<Mac username>` with your username from step 5 iv above
+8. add the following json to `~/Library/Application Support/Claude/claude_desktop_config.json`. Replace `<Mac username>` with your username from step 5 iv above
 ```
     "mcpServers": {
         "jira": {
