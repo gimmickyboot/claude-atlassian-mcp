@@ -39,7 +39,7 @@ Configure Claude (macOS) to use Atlassian mcp with credentials stored in your Ke
      
       `printf '%s' "<email address>:<token>" | base64 | tr -d '\n' | pbcopy`
       
-6. create 2 Keychain entries for the 2 base64 encoded strings (from step 3)
+5. create 2 Keychain entries for the 2 base64 encoded strings (from step 3)
 
 	i. open Keychain
 	
@@ -55,9 +55,9 @@ Configure Claude (macOS) to use Atlassian mcp with credentials stored in your Ke
 	
 	vii. repeat with the jira token. Use jira_token for "Keychain Item Name"
 	
-7. create `~/Library/Application Support/Claude/scripts` and copy in `jira.sh` and `confluence.sh`
+6. create `~/Library/Application Support/Claude/scripts` and copy in `jira.sh` and `confluence.sh`
 
-8. add the following json to `~/Library/Application Support/Claude/claude_desktop_config.json`. Replace `<Mac username>` with your username from step 5 iv above
+7. add the following json to `~/Library/Application Support/Claude/claude_desktop_config.json`. Replace `<Mac username>` with your username from step 5 iv above
 ```
     "mcpServers": {
         "jira": {
